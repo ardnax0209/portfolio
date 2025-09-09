@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alexandra Manuud — Digital Services & Business Consultancy</title>
+  <meta name="description" content="Digital services for SMBs and barangays: websites, mobile apps, online shop assistance, QR payment setup, chatbots, graphic design, Excel templates, digital marketing, SEO, virtual assistance, network setup, and video creation. Book a free consult with Alexandra Manuud." />
+  <meta property="og:title" content="Alexandra Manuud — Digital Services" />
+  <meta property="og:description" content="Websites, apps, QR payments, chatbots, design, and more. Book a free consult." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1220;           /* page background */
+      --panel:#111827;        /* card background */
+      --muted:#94a3b8;        /* muted text */
+      --text:#e5e7eb;         /* body text */
+      --accent:#0ea5e9;       /* primary */
+      --accent-2:#22d3ee;     /* gradient secondary */
+      --ring:rgba(14,165,233,.35);
+      --shadow:0 10px 20px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(34,211,238,.08), transparent 60%),
+                  radial-gradient(900px 500px at -10% -10%, rgba(14,165,233,.12), transparent 60%),
+                  var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background:rgba(11,18,32,.6);
+      border-bottom:1px solid rgba(148,163,184,.12);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:70px;height:70px;
+      display:grid;place-items:center;font-weight:800;box-shadow:var(--shadow)
+    }
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .brand h1{font-size:15px;letter-spacing:.4px;margin:0;font-weight:700}
+    nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+    nav a{color:var(--muted)}
+    nav a:hover{color:#fff}
+    .cta{background:linear-gradient(135deg,var(--accent),var(--accent-2));
+         color:#081018;font-weight:700;border:none;padding:10px 16px;border-radius:12px;cursor:pointer}
+    .cta:focus{outline:3px solid var(--ring)}
+    .menu-btn{display:none}
+    .mobile-nav{display:none;}
+
+    /* Hero */
+    .hero{padding:72px 0 48px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;color:var(--muted);font-weight:600}
+    .eyebrow span{display:inline-block;width:8px;height:8px;border-radius:999px;background:var(--accent)}
+    h2.title{font-size:40px;line-height:1.1;margin:14px 0 12px}
+    p.subtitle{color:#cbd5e1;margin:0 0 18px}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer;border:1px solid rgba(148,163,184,.2)}
+    .btn.primary{background:#0ea5e9;color:#081018;border-color:transparent}
+    .btn.ghost{background:rgba(255,255,255,.04)}
+    .badge-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px;color:var(--muted);font-size:14px}
+
+    .mock{
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+      border:1px solid rgba(148,163,184,.15);
+      border-radius:var(--radius);
+      min-height:290px;box-shadow:var(--shadow);position:relative;overflow:hidden
+    }
+    .mock::after{content:"Keldor sample landing page";position:absolute;inset:auto 0 0;display:block;padding:10px 16px;color:var(--muted);background:rgba(0,0,0,.25);text-align:right;font-size:12px}
+    .mock img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;   /* crops the image without stretching */
+      display: block;
+    }
+
+    /* Sections */
+    section{padding:64px 0}
+    .section-title{font-size:26px;margin:0 0 18px}
+    .muted{color:var(--muted)}
+
+    /* Services grid */
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .card{
+      background:var(--panel);border:1px solid rgba(148,163,184,.12);
+      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)
+    }
+    .card h3{margin:6px 0 6px;font-size:18px}
+    .card p{margin:0;color:#cbd5e1;font-size:14px}
+    .chip{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(148,163,184,.25);border-radius:999px;padding:6px 10px;color:#e2e8f0;font-size:12px}
+
+    /* Portfolio */
+    .portfolio{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+    .folio{
+      background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+      border:1px solid rgba(148,163,184,.12);border-radius:16px;overflow:hidden;min-height:160px;position:relative
+    }
+    .folio .meta{position:absolute;inset:auto 0 0;display:flex;justify-content:space-between;gap:8px;padding:10px 12px;background:rgba(8,16,24,.6);font-size:12px;color:#e2e8f0}
+    .folio img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;   /* crops the image without stretching */
+      display: block;
+    }
+
+    /* Process */
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step{background:var(--panel);border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);padding:16px}
+    .step .num{font-weight:800;color:#67e8f9}
+
+    /* Contact */
+    form{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px;
+      background:var(--panel);border:1px solid rgba(148,163,184,.12);border-radius:var(--radius);padding:18px
+    }
+    form .full{grid-column:1/-1}
+    label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
+    input,select,textarea{
+      width:100%;padding:12px;border-radius:12px;border:1px solid rgba(148,163,184,.25);
+      background:#0f172a;color:#e2e8f0
+    }
+    textarea{min-height:120px}
+    .notice{font-size:12px;color:var(--muted)}
+    .success-message {display: none; text-align: center; margin-top: 1rem; color: #4CAF50; font-weight: bold;}
+
+    /* CTA banner */
+    .cta-band{background:linear-gradient(135deg,rgba(14,165,233,.15),rgba(34,211,238,.15));border:1px solid rgba(14,165,233,.35);border-radius:var(--radius);padding:22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+
+    /* Footer */
+    footer{padding:32px 0;color:var(--muted)}
+    .foot{display:flex;align-items:center;justify-content:space-between;gap:16px}
+
+    /* Responsive */
+    @media (max-width: 960px){
+      .hero-grid{grid-template-columns:1fr}
+      .portfolio{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:repeat(2,1fr)}
+      .grid.cols-3{grid-template-columns:repeat(2,1fr)}
+      nav ul{display:none}
+      .menu-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(148,163,184,.25);background:rgba(255,255,255,.04);border-radius:12px;padding:8px 12px}
+      .mobile-nav{padding:12px 0}
+      .mobile-nav.open{display:block}
+      .mobile-nav a{display:block;padding:10px 0;color:#e2e8f0;border-top:1px solid rgba(148,163,184,.12)}
+    }
+    @media (max-width:640px){
+      .grid.cols-3{grid-template-columns:1fr}
+      .portfolio{grid-template-columns:1fr}
+      form{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"><img src="src/logo.png" alt=""></div>
+        <!-- <h1>Alexandra Manuud <span class="muted">• Digital Services & Consultancy</span></h1> -->
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-controls="mobileNav" aria-expanded="false">☰ Menu</button>
+      <a href="#contact" class="cta" id="ctaTop">Book a Free Consult</a>
+    </div>
+    <div class="container mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow"><span></span> Business-ready digital systems</div>
+        <h2 class="title">Build smarter websites, apps, and payment flows — with Alexandra Manuud</h2>
+        <p class="subtitle">I help small businesses and barangays launch fast: websites & mobile apps, online shop assistance, QR payment setup, chatbot automation, graphic design, Excel templates, digital marketing & SEO, virtual assistance, network setup, and video creation.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#contact" id="ctaHero">Get a Free 20‑min Consult</a>
+          <a class="btn ghost" href="#services">See Services</a>
+        </div>
+        <div class="badge-row" aria-label="Highlights">
+          <span class="chip">Quick deployment</span>
+          <span class="chip">Mobile‑first</span>
+          <span class="chip">Budget‑friendly</span>
+          <span class="chip">For PH market</span>
+        </div>
+      </div>
+      <div class="mock" role="img" aria-label="Illustrative mockup area for future screenshots">
+        <img src="src/keldor-landing-page.PNG" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Services Offered</h2>
+      <p class="muted">Modular, affordable, and designed to scale with your goals.</p>
+      <div class="grid cols-3" style="margin-top:16px">
+        <article class="card">
+          <h3>Website Design & Online Shop</h3>
+          <p>Business sites, landing pages, and e‑commerce (WordPress/WooCommerce or Shopify). Fast, secure, and mobile‑first.</p>
+        </article>
+        <article class="card">
+          <h3>Mobile‑First Web Apps</h3>
+          <p>Lightweight systems for registrations, bookings, surveys, or resident databases with dashboards and reports.</p>
+        </article>
+        <article class="card">
+          <h3>QR Payment Setup</h3>
+          <p>GCash/Maya/Bank QR, payment links, and receiptless flows with simple confirmation — ideal for small businesses.</p>
+        </article>
+        <article class="card">
+          <h3>Chatbot Automation</h3>
+          <p>Messenger flows (BotCake/ManyChat) for FAQs, orders, and lead capture. Includes templates and tagging.</p>
+        </article>
+        <article class="card">
+          <h3>Graphic Design</h3>
+          <p>Logos, brand kits, posters, social media assets, and ad creatives that match your brand personality.</p>
+        </article>
+        <article class="card">
+          <h3>Excel Templates</h3>
+          <p>Quick‑deploy sheets for payroll, sales, attendance, and inventory — easy to use, no macros, budget‑friendly.</p>
+        </article>
+        <article class="card">
+          <h3>Digital Marketing & SEO</h3>
+          <p>FB ads, on‑page SEO, basic analytics, and content calendars to grow reach and conversions.</p>
+        </article>
+        <article class="card">
+          <h3>Virtual Assistance</h3>
+          <p>Admin support, scheduling, email handling, and simple ops documentation; reliable and organized.</p>
+        </article>
+        <article class="card">
+          <h3>Network Setup</h3>
+          <p>Small office/home office LAN & Wi‑Fi planning and setup for stable, secure connectivity.</p>
+        </article>
+        <article class="card">
+          <h3>Video Creation</h3>
+          <p>Short promos, explainers, and social videos — script to export, optimized for feed and stories.</p>
+        </article>
+        <article class="card">
+          <h3>Government & Barangay Tools</h3>
+          <p>Resident info systems, digital clearances/IDs, offline‑first data capture, and printable reports.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <div class="container">
+      <h2 class="section-title">Portfolio</h2>
+      <p class="muted">Latest projects</p>
+      <div class="portfolio" style="margin-top:16px">
+        <a href="https://ardnax0209.github.io/prototype/" target="_blank"><figure class="folio"><img src="src/keldor-landing-page.PNG" alt=""><figcaption class="meta"><span>Keldor</span><span>Business page</span></figcaption></figure></a>
+        <a href="https://builtnotbegged.com/" target="_blank"><figure class="folio"><img src="src/builtnotbegged-landing-page.PNG" alt=""><figcaption class="meta"><span>Built Not Begged</span><span>Subscription page</span></figcaption></figure></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process">
+    <div class="container">
+      <h2 class="section-title">Simple 4‑Step Process</h2>
+      <div class="steps" style="margin-top:12px">
+        <div class="step"><div class="num">01</div><h3>Discover</h3><p class="muted">Free 20‑min consult to map goals, budget, and quick wins.</p></div>
+        <div class="step"><div class="num">02</div><h3>Design</h3><p class="muted">Light specs, wireframes, and visual treatment to align fast.</p></div>
+        <div class="step"><div class="num">03</div><h3>Build</h3><p class="muted">Rapid iteration; weekly demos; mobile‑first, secure, and scalable.</p></div>
+        <div class="step"><div class="num">04</div><h3>Launch & Support</h3><p class="muted">Handover, quick training, and optional care plan.</p></div>
+      </div>
+      <div class="cta-band" style="margin-top:18px">
+        <div>
+          <strong>Ready to start?</strong>
+          <div class="muted">I can ship a working prototype in weeks, not months.</div>
+        </div>
+        <a class="btn primary" href="#contact" id="ctaBand">Book a Free Consult</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Let’s work together</h2>
+      <p class="muted">Send a quick brief and I’ll reply with options within a day.</p>
+      <form id="contactForm" autocomplete="on">
+        <div>
+          <label for="name">Your name</label>
+          <input id="name" name="name" required placeholder="e.g., Juan Dela Cruz" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+        </div>
+        <div>
+          <label for="phone">Mobile / Messenger</label>
+          <input id="phone" name="phone" placeholder="09xx… or FB link" />
+        </div>
+        <div>
+          <label for="service">Service</label>
+          <select id="service" name="service">
+            <option>Website Design</option>
+            <option>Online Shop</option>
+            <option>QR Payment Setup</option>
+            <option>Chatbot Automation</option>
+            <option>Graphic Design</option>
+            <option>Excel Templates</option>
+            <option>Digital Marketing & SEO</option>
+            <option>Virtual Assistance</option>
+            <option>Network Setup</option>
+            <option>Video Creation</option>
+            <option>Government/Barangay Tools</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" placeholder="Goals, timeline, budget…"></textarea>
+        </div>
+        <div class="full" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+          <button type="submit" class="btn primary" id="submitBtn">Send Inquiry</button>
+          <a class="btn ghost" href="https://m.me/amaya.sanara?text=Hi%20Alexandra%2C%20I%27m%20interested%20in%20your%20services
+          " target="_blank" rel="noopener">Message on Facebook</a>
+          <span class="notice">By submitting, you agree to be contacted regarding your inquiry.</span>
+        </div>
+      </form>
+      <div class="success-message" id="successMessage">✅ Thank you for reaching out! Your message has been received.</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container foot">
+      <div>© <span id="year"></span> Alexandra Manuud. All rights reserved.</div>
+      <div class="muted">Built with care for Philippine SMBs and communities.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if(menuBtn){
+      menuBtn.addEventListener('click', () => {
+        const open = mobileNav.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', String(open));
+      });
+    }
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if(id.length > 1){
+          const el = document.querySelector(id);
+          if(el){
+            e.preventDefault();
+            el.scrollIntoView({behavior:'smooth', block:'start'});
+          }
+        }
+      });
+    });
+
+    // Basic analytics for CTA clicks
+    function track(event, data){
+      try{ console.log('analytics', {event, ...data}); }catch(e){}
+    }
+    ['ctaTop','ctaHero','ctaBand','submitBtn'].forEach(id => {
+      const el = document.getElementById(id);
+      if(el){ el.addEventListener('click', () => track('click', {id})); }
+    });
+
+    // Contact form: open mailto draft with prefilled body
+    /*
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      const subject = encodeURIComponent(`Inquiry: ${data.service} — from ${data.name}`);
+      const body = encodeURIComponent(
+        `Name: ${data.name}\nEmail: ${data.email}\nPhone/Messenger: ${data.phone || ''}\nService: ${data.service}\n\nProject details:\n${data.message || ''}\n\n(Submitted from alexandra‑manuud landing page)`
+      );
+      // TODO: change to your preferred email
+      const to = 'hello.ilustrados@gmail.com';
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    });
+    */
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('successMessage').style.display = 'block';
+      this.reset();
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
