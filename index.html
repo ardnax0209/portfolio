@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alexandra Manuud — Digital Services & Business Consultancy</title>
+  <title>Ilustrados Digital Services — Digital Services & Business Consultancy</title>
   <meta name="description" content="Digital services for SMBs and barangays: websites, mobile apps, online shop assistance, QR payment setup, chatbots, graphic design, Excel templates, digital marketing, SEO, virtual assistance, network setup, and video creation. Book a free consult with Alexandra Manuud." />
   <meta property="og:title" content="Alexandra Manuud — Digital Services" />
   <meta property="og:description" content="Websites, apps, QR payments, chatbots, design, and more. Book a free consult." />
@@ -44,11 +44,11 @@
       background:rgba(11,18,32,.6);
       border-bottom:1px solid rgba(148,163,184,.12);
     }
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between;}
     .brand{display:flex;align-items:center;gap:12px}
     .logo{
-      width:70px;height:70px;
-      display:grid;place-items:center;font-weight:800;box-shadow:var(--shadow)
+      width:110px;height:110px;
+      display:grid;place-items:center;font-weight:800;
     }
     .logo img {
       width: 100%;
@@ -162,6 +162,12 @@
       .mobile-nav.open{display:block}
       .mobile-nav a{display:block;padding:10px 0;color:#e2e8f0;border-top:1px solid rgba(148,163,184,.12)}
     }
+
+    /* Hide CTA button on mobile */
+    @media (max-width: 768px) {
+    .cta-header {display: none;}
+    }
+    
     @media (max-width:640px){
       .grid.cols-3{grid-template-columns:1fr}
       .portfolio{grid-template-columns:1fr}
@@ -174,8 +180,7 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <div class="logo" aria-hidden="true"><img src="src/logo.PNG" alt=""></div>
-        <!-- <h1>Alexandra Manuud <span class="muted">• Digital Services & Consultancy</span></h1> -->
+        <div class="logo" aria-hidden="true"><img src="src/updated_logo.png" alt=""></div>
       </div>
       <nav aria-label="Primary">
         <ul>
@@ -186,7 +191,7 @@
         </ul>
       </nav>
       <button class="menu-btn" id="menuBtn" aria-controls="mobileNav" aria-expanded="false">☰ Menu</button>
-      <a href="#contact" class="cta" id="ctaTop">Book a Free Consult</a>
+      <button class="cta cta-header" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Book a Consult</button>
     </div>
     <div class="container mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
       <a href="#services">Services</a>
@@ -201,8 +206,8 @@
     <div class="container hero-grid">
       <div>
         <div class="eyebrow"><span></span> Business-ready digital systems</div>
-        <h2 class="title">Build smarter websites, apps, and payment flows — with Alexandra Manuud</h2>
-        <p class="subtitle">I help small businesses and barangays launch fast: websites & mobile apps, online shop assistance, QR payment setup, chatbot automation, graphic design, Excel templates, digital marketing & SEO, virtual assistance, network setup, and video creation.</p>
+        <h2 class="title">Build smarter websites, apps, and payment flows — with Ilustrados Digital Services</h2>
+        <p class="subtitle">We help small businesses and barangays launch fast: websites & mobile apps, online shop assistance, QR payment setup, chatbot automation, graphic design, Excel templates, digital marketing & SEO, virtual assistance, network setup, and video creation.</p>
         <div class="hero-cta">
           <a class="btn primary" href="#contact" id="ctaHero">Get a Free 20‑min Consult</a>
           <a class="btn ghost" href="#services">See Services</a>
@@ -282,6 +287,10 @@
       <div class="portfolio" style="margin-top:16px">
         <a href="https://ardnax0209.github.io/prototype/" target="_blank"><figure class="folio"><img src="src/keldor-landing-page.PNG" alt=""><figcaption class="meta"><span>Keldor</span><span>Business page</span></figcaption></figure></a>
         <a href="https://builtnotbegged.com/" target="_blank"><figure class="folio"><img src="src/builtnotbegged-landing-page.PNG" alt=""><figcaption class="meta"><span>Built Not Begged</span><span>Subscription page</span></figcaption></figure></a>
+        <figure class="folio"><figcaption class="meta"><span>Project Title</span><span>Category</span></figcaption></figure>
+        <figure class="folio"><figcaption class="meta"><span>Project Title</span><span>Category</span></figcaption></figure>
+        <figure class="folio"><figcaption class="meta"><span>Project Title</span><span>Category</span></figcaption></figure>
+        <figure class="folio"><figcaption class="meta"><span>Project Title</span><span>Category</span></figcaption></figure>
       </div>
     </div>
   </section>
@@ -358,7 +367,7 @@
 
   <footer>
     <div class="container foot">
-      <div>© <span id="year"></span> Alexandra Manuud. All rights reserved.</div>
+      <div>© <span id="year"></span> Ilustrados Digital Services. All rights reserved.</div>
       <div class="muted">Built with care for Philippine SMBs and communities.</div>
     </div>
   </footer>
@@ -423,4 +432,3 @@
   </script>
 </body>
 </html>
-
