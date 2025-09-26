@@ -146,6 +146,30 @@
     /* CTA banner */
     .cta-band{background:linear-gradient(135deg,rgba(14,165,233,.15),rgba(34,211,238,.15));border:1px solid rgba(14,165,233,.35);border-radius:var(--radius);padding:22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 
+    /* Back to Top Button */
+    #backToTop {
+      display: none; /* hidden by default */
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 99;
+      font-size: 20px;
+      border: none;
+      outline: none;
+      background-color: #0077ff;
+      color: white;
+      cursor: pointer;
+      padding: 12px 15px;
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    #backToTop:hover {
+      background-color: #0056b3;
+      transform: scale(1.1);
+    }
+
     /* Footer */
     footer{padding:32px 0;color:var(--muted)}
     .foot{display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -157,7 +181,7 @@
       .steps{grid-template-columns:repeat(2,1fr)}
       .grid.cols-3{grid-template-columns:repeat(2,1fr)}
       nav ul{display:none}
-      .menu-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(148,163,184,.25);background:rgba(255,255,255,.04);border-radius:12px;padding:8px 12px}
+      .menu-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(148,163,184,.25);background:rgba(255,255,255,.04);border-radius:12px;padding:8px 12px;color:white;}
       .mobile-nav{padding:12px 0}
       .mobile-nav.open{display:block}
       .mobile-nav a{display:block;padding:10px 0;color:#e2e8f0;border-top:1px solid rgba(148,163,184,.12)}
@@ -287,10 +311,6 @@
       <div class="portfolio" style="margin-top:16px">
         <a href="https://ardnax0209.github.io/prototype/" target="_blank"><figure class="folio"><img src="src/keldor-landing-page.PNG" alt=""><figcaption class="meta"><span>Keldor</span><span>Business page</span></figcaption></figure></a>
         <a href="https://builtnotbegged.com/" target="_blank"><figure class="folio"><img src="src/builtnotbegged-landing-page.PNG" alt=""><figcaption class="meta"><span>Built Not Begged</span><span>Subscription page</span></figcaption></figure></a>
-        <figure class="folio"><figcaption class="meta"><span>Project Title</span><span>Category</span></figcaption></figure>
-        <figure class="folio"><figcaption class="meta"><span>Project Title</span><span>Category</span></figcaption></figure>
-        <figure class="folio"><figcaption class="meta"><span>Project Title</span><span>Category</span></figcaption></figure>
-        <figure class="folio"><figcaption class="meta"><span>Project Title</span><span>Category</span></figcaption></figure>
       </div>
     </div>
   </section>
@@ -365,6 +385,11 @@
     </div>
   </section>
 
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Go to top">
+    ↑
+  </button>
+
   <footer>
     <div class="container foot">
       <div>© <span id="year"></span> Ilustrados Digital Services. All rights reserved.</div>
@@ -425,6 +450,26 @@
       e.preventDefault();
       document.getElementById('successMessage').style.display = 'block';
       this.reset();
+    });
+
+    // Get the button
+    const backToTop = document.getElementById("backToTop");
+
+    // Show button when user scrolls down 200px
+    window.onscroll = function() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    };
+
+    // Scroll to top when button clicked
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     });
 
     // Footer year
